@@ -12,7 +12,7 @@ const App = () => {
       {
         id: 1,
         texto: 'Lavar la ropa',
-        completada: false
+        completada: true
       },
       {
         id: 2,
