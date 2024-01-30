@@ -17,7 +17,7 @@ const FormularioTareas = ({tareas, cambiarTareas}) => {
                 ...tareas,
                 {
                     id: uuidv4(),
-                    texto: 'Pagar Luz',
+                    texto: 'Edite o Ponga una Tarea',
                     completada: false
                 }
             ]
