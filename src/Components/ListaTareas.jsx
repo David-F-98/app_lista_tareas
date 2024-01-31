@@ -1,6 +1,6 @@
 import React from 'react';
 import Tarea from './Tarea';
-const ListaTareas = ({tareas, cambiarTareas}) => {
+const ListaTareas = ({tareas, cambiarTareas, mostrarCompletadas}) => {
     const toggleCompletada = (id) =>{
         cambiarTareas(tareas.map((tarea)=>{
             if(tarea.id === id){
@@ -32,13 +32,24 @@ const ListaTareas = ({tareas, cambiarTareas}) => {
         <ul className='lista-tareas'>
             {tareas.length > 0 ? 
                 tareas.map((tarea)=>{
-                    return  <Tarea 
-                        key={tarea.id}
-                        tarea={tarea}
-                        toggleCompletada={toggleCompletada}
-                        editarTarea={editarTarea}
-                        borrarTarea={borrarTarea}
-                    />                        
+                    if(mostrarCompletadas){
+                        return  <Tarea 
+                            key={tarea.id}
+                            tarea={tarea}
+                            toggleCompletada={toggleCompletada}
+                            editarTarea={editarTarea}
+                            borrarTarea={borrarTarea}
+                            />                     
+                    } else if (!tarea.completada){
+                        return  <Tarea 
+                            key={tarea.id}
+                            tarea={tarea}
+                            toggleCompletada={toggleCompletada}
+                            editarTarea={editarTarea}
+                            borrarTarea={borrarTarea}
+                            />  
+                    }
+                    return;
                 })
             : <div className='lista-tareas__mensaje'>No hay tareas agregadas</div>
             }
