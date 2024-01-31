@@ -17,16 +17,18 @@ const FormularioTareas = ({tareas, cambiarTareas}) => {
                 ...tareas,
                 {
                     id: uuidv4(),
-                    texto: 'Edite o Ponga una Tarea',
+                    texto: inputTarea,
                     completada: false
                 }
             ]
         );
+        cambiarInputTarea;
     }
     
     return (         
         <form className='formulario-tareas' onSubmit={handleSubmit}>
-            <input 
+            <input
+                required 
                 type='text' 
                 className='formulario-tareas__input'
                 placeholder='Escribe una tarea'

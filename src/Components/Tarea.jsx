@@ -9,7 +9,6 @@ const Tarea = ({tarea, toggleCompletada, editarTarea, borrarTarea}) => {
     const handleSubmit = (e)=>{
         e.preventDefault();
         editarTarea(tarea.id, nuevaTarea);
-        borrarTarea(tarea.id);
         cambiarEditandoTarea(false);
     }
 
